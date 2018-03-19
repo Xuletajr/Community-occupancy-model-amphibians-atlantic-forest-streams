@@ -21,3 +21,6 @@ occupancy_habitat_covariates_anura.csv -
 
 ## Detection covariates
 detection_covariates_anura.csv - contains information of survey date and daily precipitation for each replicate survey event: 1) stream" - contains each site id; 2-6) Each columns contains Julian date for a different replicate survey event (we assumed the first day as the beginning of southern hemisphere spring). ; 7-11) Each columns contains daily precipitation (mm) for a replicate survey event. 
+
+# Code
+Bcommunity_model_code_amphibians.R - R code to run the hierarchical community occupancy model for amphibian in Brazil’s Atlantic Forest streams. Contains code to import and reshape the data and run the model file in JAGS.
