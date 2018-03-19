@@ -139,3 +139,88 @@ date2 <- as.matrix(date2)
 rain1[29,5] = 0;  rain1[39,5] = 0;
 rain1 <- as.matrix(rain1)
 
+# Write the model code to a text file 
+cat("
+    model{
+    
+    #Priors
+    omega ~ dunif(0,1)
+    
+    # Hyperpriors - define prior distributions for community-level parameters 
+    # in occupancy and detection models
+    a0.mean ~ dunif (0,1)
+    mu.a0 <- log(a0.mean) - log(1-a0.mean)
+    tau.a0 ~ dgamma(0.1,0.1) 
+    
+    b0.mean ~ dunif(0,1) ##transect
+    mu.b0 <- log(b0.mean) - log(1-b0.mean)
+    tau.b0 ~ dgamma(0.1,0.1)    
+    
+    b00.mean ~ dunif(0,1)
+    mu.b00 <- log(b00.mean) - log(1-b00.mean)
+    tau.b00 ~ dgamma(0.1,0.1) 
+    
+    mu.a1 ~ dnorm(0, 0.001)
+    mu.a2 ~ dnorm(0, 0.001)
+    mu.a3 ~ dnorm(0, 0.001)
+    mu.a4 ~ dnorm(0, 0.001)
+    mu.a5 ~ dnorm(0, 0.001)
+    mu.b1 ~ dnorm(0, 0.001)
+    mu.b2 ~ dnorm(0, 0.001)
+    mu.b3 ~ dnorm(0, 0.001)
+    
+    tau.a1 ~ dgamma(0.1,0.1)
+    tau.a2 ~ dgamma(0.1,0.1)
+    tau.a3 ~ dgamma(0.1,0.1)
+    tau.a4 ~ dgamma(0.1,0.1) 
+    tau.a5 ~ dgamma(0.1,0.1)
+    tau.b1 ~ dgamma(0.1,0.1) 
+    tau.b2 ~ dgamma(0.1,0.1)
+    tau.b3 ~ dgamma(0.1,0.1)
+    
+    # Create priors for species i from the community-level prior distributions
+    for (i in 1:(nspec+nzeroes)) {
+    w[i]  ~ dbern(omega)
+    a0[i] ~ dnorm(mu.a0,  tau.a0)
+    b00[i]~ dnorm(mu.b00, tau.b00) 
+    b0[i] ~ dnorm(mu.b0,  tau.b0)
+    a1[i] ~ dnorm(mu.a1,  tau.a1)
+    a2[i] ~ dnorm(mu.a2,  tau.a2)
+    a3[i] ~ dnorm(mu.a3,  tau.a3)
+    a4[i] ~ dnorm(mu.a4,  tau.a4)
+    a5[i] ~ dnorm(mu.a5,  tau.a5)
+    b1[i] ~ dnorm(mu.b1,  tau.b1)    
+    b2[i] ~ dnorm(mu.b2,  tau.b2)
+    b3[i] ~ dnorm(mu.b3,  tau.b3)
+    
+    # Estimate the Z matrix (true occurrence for species i at stream j)      
+    for (j in 1:nsites) {
+    logit(psi[j,i]) <- a0[i] + a1[i] * forest1[j] + a2[i] * agriculture1[j] +
+    a3[i] * catchment1[j] + a4[i] * density1[j] + a5[i] * slope1[j]
+    
+    mu.psi[j,i] <- psi[j,i] * w[i]
+    Z[j,i] ~ dbern(mu.psi[j,i])
+    
+    # Estimate detection for species i at stream j during sampling period k.      
+    for (k in 1:K[j]) {  
+    logit(p[j,k,i]) <-   b0[i] * Met[k] + b00[i] * (1-Met[k]) + 
+    b1[i] * date1[j,k] +  b2[i] * date2[j,k] + b3[i] * rain1[j,k]
+    
+    mu.p[j,k,i] <- p[j,k,i]*Z[j,i]
+    X[j,k,i] ~ dbern(mu.p[j,k,i])
+    } # k
+    } # j
+    } # i
+    
+    # Derived quantities
+    n0 <- sum(w[(nspec+1):(nspec+nzeroes)]) # number of unseen species
+    N <- nspec + n0                         # Overall estimated richness
+    
+    # Determine site level richness estimates for the whole community
+    for(j in 1:nsites){
+    Nsite[j] <- inprod(Z[j,1:(nspec+nzeroes)],w[1:(nspec+nzeroes)])
+    } # j
+    
+    # Finish writing the text file into a document we call "community.model.anura.txt"
+    }
+    ",file="community.model.anura.txt")
