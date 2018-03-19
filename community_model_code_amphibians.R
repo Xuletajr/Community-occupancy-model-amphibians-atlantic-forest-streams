@@ -221,6 +221,44 @@ cat("
     Nsite[j] <- inprod(Z[j,1:(nspec+nzeroes)],w[1:(nspec+nzeroes)])
     } # j
     
-    # Finish writing the text file into a document we call "community.model.anura.txt"
+    # Finish writing the text file into a document we call community.model.anura.txt
     }
     ",file="community.model.anura.txt")
+
+# Load all the data
+jags.data = list (nspec = nspec, nzeroes = nzeroes, nsites = nsites, K = K, 
+                  X = Xaug, forest1 = forest1, agriculture1 = agriculture1, 
+                  catchment1 = catchment1, density1 = density1, slope1=slope1, 
+                  Met = Met, date1 = date1, date2 = date2, rain1 = rain1)
+
+# Specify the parameters to be monitored
+jags.params = c("omega", "mu.a0", "mu.a1", "mu.a2", "mu.a3", "mu.a4", "mu.a5",
+                "mu.b0", "mu.b00", "mu.b1", "mu.b2", "mu.b3", "tau.a0", "tau.a1",  
+                "tau.a2","tau.a3","tau.a4","tau.a5", "tau.b0", "tau.b00", 
+                "tau.b1", "tau.b2", "tau.b3", "a0", "a1", "a2","a3", "a4", "a5",
+                "b0", "b00", "b1", "b2", "b3", "N", "Nsite")
+
+# Specify the initial values
+zinits <- apply(Xaug,c(1,3),max,na.rm=TRUE)
+jags.inits = function (){
+  omegaGuess = runif(1, nspec/(nspec+nzeroes), 1)
+  psi.meanGuess = runif(1, 0.25,1)
+  list(omega=omegaGuess, w=c(rep(1, nspec), rbinom(nzeroes, size=1, prob=omegaGuess)),
+       a0=rnorm(nspec+nzeroes), b0=rnorm(nspec+nzeroes),b00=rnorm(nspec+nzeroes),
+       Z = zinits)  
+}
+
+# MCMC settings
+ni <- 50000 # number of total iterations per chain
+nt <-    20 # thinning rate 
+nb <- 30000 # number of iterations to discard at the beginning
+nc <-     3 # number of Markov chains
+na <- 10000 # Number of iterations to run in the JAGS adaptive phase.
+
+# Load the jagsUI library
+library(jagsUI)
+
+# Run JAGS model
+fit <- jagsUI(data = jags.data, inits = jags.inits, jags.params,
+              "covar.model.anura.BAF.txt", n.chains = nc, n.thin = nt,
+              n.iter = ni, n.burnin = nb, n.adapt = na, parallel=T, store.data=T)
