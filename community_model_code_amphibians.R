@@ -258,7 +258,7 @@ na <- 10000 # Number of iterations to run in the JAGS adaptive phase.
 # Load the jagsUI library
 library(jagsUI)
 
-# Run JAGS model
+# Call JAGS from R
 fit <- jagsUI(data = jags.data, inits = jags.inits, jags.params,
               "covar.model.anura.BAF.txt", n.chains = nc, n.thin = nt,
               n.iter = ni, n.burnin = nb, n.adapt = na, parallel=T, store.data=T)
