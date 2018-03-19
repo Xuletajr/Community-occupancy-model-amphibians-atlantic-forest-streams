@@ -45,3 +45,4 @@ for (i in 1: dim(X)[3]) {
   X[,,i][-b] = 0                         # put 0 if the species was not surveyed
   X[,,i][29,5] = NA;  X[,,i][39,5] = NA; # adding NA's for missing sampling occasions
 } # i
+
