@@ -17,7 +17,7 @@ Key Words: Anuran, Atlantic Forest, automated acoustic recorders, community mode
 amphibian_occ_data.csv - contains the data of amphibian occurrence in Brazilian Atlantic Forest streams. The rows are 50 sites in the study area. There are four columns: 1) "stream" - contains each site id; 2) "date" - contains the survey date (YYYYMMDD); 3) "species" - is species name code. The names of species with their respectives codes are available in the "amphibian_species.csv"; 4) "rep" - representes a replicate survey event. Rep 1-3 represents the passive method using Automated Acoustic Recorders (AAR) and rep 4-5 represents the active approach of Standardized Acoustic and Visual Transect Sampling (SAVTS).
 
 ## Habitat covariates
-occupancy_habitat_covariates_anura.csv - 
+occupancy_habitat_covariates_anura.csv - contains habitat covariates information for each site. 1) "stream" ;	2) "long"; 3)	"lat"; 4)	"altitude" ;	5) "agriculture"	; 6) "buildings" ; 7) "forest" ; 8) "silviculture"; 9) "lentic_water"; 10 "catchment_area" ; 11)	"stream_length"; 12)	"slope_mean"
 
 ## Detection covariates
 detection_covariates_anura.csv - contains information of survey date and daily precipitation for each replicate survey event: 1) stream" - contains each site id; 2-6) Each columns contains Julian date for a different replicate survey event (we assumed the first day as the beginning of southern hemisphere spring). ; 7-11) Each columns contains daily precipitation (mm) for a replicate survey event. 
