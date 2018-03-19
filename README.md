@@ -2,7 +2,7 @@
 __________________________________________________________________________________________________________________________________________
 # Effects of agriculture and topography on tropical amphibian species and communities
 
-José Wagner Ribeiro Jr, Tadeu Siqueira, Gabriel Lourenço Brejão, and Elise F. Zipkin 
+## José Wagner Ribeiro Jr, Tadeu Siqueira, Gabriel Lourenço Brejão, and Elise F. Zipkin 
 
 __________________________________________________________________________________________________________________________________________
 # Abstract:
@@ -10,4 +10,5 @@ Habitat loss is the greatest threat to the persistence of forest-dependent amphi
 
 Key Words: Anuran, Atlantic Forest, automated acoustic recorders, community model, deforestation, detection error, habitat loss, hierarchical model, landscape, matrix habitat, tropical forest
 
-## Data
+# Data
+## Occupancy habitat covariates anura
