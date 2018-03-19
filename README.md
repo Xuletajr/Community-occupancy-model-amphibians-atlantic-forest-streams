@@ -1,4 +1,4 @@
-# Community-occupancy-model-anurans-atlantic-forest-streams
+# Community-occupancy-model-amphibians-atlantic-forest-streams
 __________________________________________________________________________________________________________________________________________
 # Effects of agriculture and topography on tropical amphibian species and communities
 
