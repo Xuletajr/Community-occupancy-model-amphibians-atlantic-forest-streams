@@ -1,0 +1,37 @@
+﻿Species,Species.code,Reproduction,Habitat
+Aplastodiscus perviridis,lAPLPER,Pond,Forest
+Dendropsophus elegans,lDENELE,Pond,Open
+Dendropsophus microps,lDENMIC,Pond,Forest
+Hypsiboas bischoffi,lHYPBIS,Pond,Open
+Hypsiboas faber,lHYPFAB,Pond,Both
+Macrogenioglottus alipioi,lMACALI,Pond,Forest
+Paratelmatobius sp.,lPARSP,Pond,Forest
+Phyllomedusa distincta,lPHYDIS,Pond,Forest
+Physalaemus lateristriga,lPHYLAT,Pond,Forest
+Proceratophrys boiei,lPROBOI,Pond,Forest
+Rhinella icterica,lRHIICT,Pond,Both
+Rhinella ornata,lRHIORN,Pond,Both
+Scinax hayii,lSCIHAY,Pond,Forest
+Scinax cf. imbegue,lSCIIMB,Pond,Open
+Dendrophryniscus brevipollicatus,pDENBRE,Phytotelmata,Forest
+Fritziana cf. fissilis,pFRIFIS,Phytotelmata,Forest
+Fritziana cf. ohausi,pFRIOHA,Phytotelmata,Forest
+Ololygon perpusilla,pOLOPER,Phytotelmata,Forest
+Aplastodiscus albosignatus,sAPLALB,Stream,Forest
+Bokermannohyla circumdata,sBOKCIR,Stream,Forest
+Bokermannohyla hylax,sBOKHYL,Stream,Forest
+Crossodactylus caramaschii,sCROCAR,Stream,Forest
+Hylodes cardosoi,sHYLCAR,Stream,Forest
+Hylodes gr. lateristrigatus,sHYLLAT,Stream,Forest
+Hypsiboas caipora,sHYPCAI,Stream,Forest
+Ololygon brieni,sOLOBRI,Stream,Forest
+Phasmahyla cochranae,sPHACOC,Stream,Forest
+Vitreorana uranoscopa,sVITURA,Stream,Forest
+Adenomera marmorata,tADEMAR,Non-aquatic,Both
+Brachycephalus sp.,tBRASP,Non-aquatic,Forest
+Cycloramphus acangatan,tCYCACA,Non-aquatic,Forest
+Haddadus binotatus,tHADBIN,Non-aquatic,Forest
+Ischnocnema guentheri,tISCGUE,Non-aquatic,Forest
+Ischnocnema cf. hoehnei,tISCHOE,Non-aquatic,Forest
+Ischnocnema aff. parva,tISCPAR,Non-aquatic,Forest
+Ischnocnema cf. spanios,tISCSPA,Non-aquatic,Forest
