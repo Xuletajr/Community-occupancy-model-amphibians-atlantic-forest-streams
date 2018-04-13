@@ -4,12 +4,7 @@ ________________________________________________________________________________
 
 ## José Wagner Ribeiro Jr, Tadeu Siqueira, Gabriel Lourenço Brejão, and Elise F. Zipkin
 
-Code DOI: https://doi.org/10.5281/zenodo.1218018 
-https://zenodo.org/badge/125885904.svg
-
-.. image:: https://zenodo.org/badge/125885904.svg
-   :target: https://zenodo.org/badge/latestdoi/125885904
-   
+Code DOI:  
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1218018.svg)](https://doi.org/10.5281/zenodo.1218018)
 
 ## Please contact the first author for questions about the code or data: José W. Ribeiro Jr (jwribeirojunior@gmail.com)
