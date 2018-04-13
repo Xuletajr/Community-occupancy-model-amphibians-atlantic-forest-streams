@@ -1,8 +1,8 @@
-# Community-occupancy-model-amphibians-atlantic-forest-streams
+## Community-occupancy-model-amphibians-atlantic-forest-streams
 __________________________________________________________________________________________________________________________________________
 # Effects of agriculture and topography on tropical amphibian species and communities
 
-## José Wagner Ribeiro Jr, Tadeu Siqueira, Gabriel Lourenço Brejão, and Elise F. Zipkin
+### José Wagner Ribeiro Jr, Tadeu Siqueira, Gabriel Lourenço Brejão, and Elise F. Zipkin
 
 Code DOI:  
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1218018.svg)](https://doi.org/10.5281/zenodo.1218018)
