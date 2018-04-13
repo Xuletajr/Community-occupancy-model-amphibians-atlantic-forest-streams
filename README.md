@@ -2,7 +2,10 @@
 __________________________________________________________________________________________________________________________________________
 # Effects of agriculture and topography on tropical amphibian species and communities
 
-## José Wagner Ribeiro Jr, Tadeu Siqueira, Gabriel Lourenço Brejão, and Elise F. Zipkin 
+## José Wagner Ribeiro Jr, Tadeu Siqueira, Gabriel Lourenço Brejão, and Elise F. Zipkin
+
+Code DOI: https://doi.org/10.5281/zenodo.1218018 
+https://zenodo.org/badge/125885904.svg
 
 ## Please contact the first author for questions about the code or data: José W. Ribeiro Jr (jwribeirojunior@gmail.com)
 __________________________________________________________________________________________________________________________________________
