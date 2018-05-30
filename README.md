@@ -1,8 +1,6 @@
-# Effects of agriculture and topography on tropical amphibian species and communities
+# [Effects of agriculture and topography on tropical amphibian species and communities](https://doi.org/10.1002/eap.1741)
 
 ### José Wagner Ribeiro Jr, Tadeu Siqueira, Gabriel Lourenço Brejão, and Elise F. Zipkin
-
-### Paper DOI: [![DOI](https://doi.org/10.1002/eap.1741.svg)](https://doi.org/10.1002/eap.1741)
 
 ### Code DOI: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1218018.svg)](https://doi.org/10.5281/zenodo.1218018)
 
@@ -16,13 +14,32 @@ Key Words: Anuran, Atlantic Forest, automated acoustic recorders, community mode
 ## Data
 ### Occupancy data
 
-amphibian_occ_data.csv - contains the data of amphibian occurrence in Brazilian Atlantic Forest streams. The rows are 50 sites in the study area. There are four columns: 1) "stream" - contains sampling site id; 2) "date" - contains the survey date (YYYYMMDD); 3) "species" - is species name code. The names of species with their respective codes are available in the "amphibian_species.csv"; 4) "rep" - represents a replicate survey event. Rep 1-3 represents the passive method using Automated Acoustic Recorders (AAR) and rep 4-5 represents the active approach of Standardized Acoustic and Visual Transect Sampling (SAVTS).
+amphibian_occ_data.csv - contains the data of amphibian occurrence in Brazilian Atlantic Forest streams. The rows are 50 sites in the study area. There are four columns: 
+1. "stream" - contains sampling site id
+2. "date" - contains the survey date (YYYYMMDD)
+3. "species" - is species name code. The names of species with their respective codes are available in the "amphibian_species.csv"
+4. "rep" - represents a replicate survey event. Rep 1-3 represents the passive method using Automated Acoustic Recorders (AAR) and rep 4-5 represents the active approach of Standardized Acoustic and Visual Transect Sampling (SAVTS).
 
 ### Habitat covariates
-occupancy_habitat_covariates_anura.csv - contains habitat covariate information for each site. 1) "stream" - contains sampling site id;	2) "long" - is the geographic longitude coordinate as decimal degree; 3)	"lat" - is the geographic latitude coordinate as decimal degree; 4)	"altitude" - altitude of each site;	5) "agriculture" -  is the proportion of agriculture area within a buffer; 6) "buildings" - is the proportion of rural buildings area within a buffer ; 7) "forest" - is the proportion of natural forest cover area within a buffer ; 8) "silviculture" - is the proportion of Pinus/Eucalyptus area within a buffer; 9) "lentic_water" - is the proportion of lentic bodywater area within a buffer; 10 "catchment_area" -  is the complete surface area (ha) that contributes to the stream channel in the downstream point from each sampling site; 11)	"stream_length" - is the stream length network (m) within a buffer; 12)	"slope_mean" - is the mean slope within a buffer, it was derived from the Digital Elevation Model raster image (30-m resolution) from Shuttle Radar Topography Mission (SRTM).
+occupancy_habitat_covariates_anura.csv - contains habitat covariate information for each site. 
+1. "stream" - contains sampling site id
+2. "long" - is the geographic longitude coordinate as decimal degree
+3. "lat" - is the geographic latitude coordinate as decimal degree
+4. "altitude" - altitude of each site
+5. "agriculture" - is the proportion of agriculture area within a buffer
+6. "buildings" - is the proportion of rural buildings area within a buffer
+7. "forest" - is the proportion of natural forest cover area within a buffer
+8. "silviculture" - is the proportion of Pinus/Eucalyptus area within a buffer
+9. "lentic_water" - is the proportion of lentic bodywater area within a buffer
+10. "catchment_area" - is the complete surface area (ha) that contributes to the stream channel in the downstream point from each sampling site
+11.	"stream_length" - is the stream length network (m) within a buffer
+12.	"slope_mean" - is the mean slope within a buffer, it was derived from the Digital Elevation Model raster image (30-m resolution) from Shuttle Radar Topography Mission (SRTM).
 
 ### Detection covariates
-detection_covariates_anura.csv - contains information of survey date and daily precipitation for each replicate survey event: 1) stream" - contains sampling site id; 2-6) Each columns contains Julian date for a different replicate survey event (we assumed the first day as the beginning of southern hemisphere spring); 7-11) Each columns contains daily precipitation (mm) for a replicate survey event. 
+detection_covariates_anura.csv - contains information of survey date and daily precipitation for each replicate survey event: 
+1. stream" - contains sampling site id 
+2-6. Each columns contains Julian date for a different replicate survey event (we assumed the first day as the beginning of southern hemisphere spring) 
+7-11. Each columns contains daily precipitation (mm) for a replicate survey event. 
 
 ## Code
 community_model_code_amphibians.R - R code to run the hierarchical community occupancy model for amphibian in Brazil’s Atlantic Forest streams. Contains code to import and reshape the data and run the model file in JAGS.
