@@ -37,8 +37,8 @@ occupancy_habitat_covariates_anura.csv - contains habitat covariate information 
 
 ### Detection covariates
 detection_covariates_anura.csv - contains information of survey date and daily precipitation for each replicate survey event: 
-1. stream" - contains sampling site id 
-2-6. Each columns contains Julian date for a different replicate survey event (we assumed the first day as the beginning of southern hemisphere spring) 
+1. "stream" - contains sampling site id  
+2-6. Each columns contains Julian date for a different replicate survey event (we assumed the first day as the beginning of southern hemisphere spring)  
 7-11. Each columns contains daily precipitation (mm) for a replicate survey event. 
 
 ## Code
